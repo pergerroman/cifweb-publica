@@ -1,0 +1,30 @@
+/* Pie compartido: cada página lo vincula directamente. */
+.site-footer,
+.page-footer {
+  position: relative;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: clamp(26px, 3vw, 44px) clamp(20px, 6vw, 90px);
+  background: #087bc1;
+  color: #fff;
+}
+.site-footer > p,
+.page-footer > p { max-width: 48ch; margin: 0; font-size: clamp(0.72rem, 0.9vw, 0.88rem); font-weight: 600; line-height: 1.45; }
+.site-footer__credit,
+.page-footer a { display: flex; align-items: center; gap: 14px; color: #fff; font-size: clamp(0.68rem, 0.85vw, 0.82rem); font-weight: 600; line-height: 1.3; text-decoration: none; }
+.site-footer__credit span { max-width: 23ch; }
+.site-footer__credit strong,
+.page-footer strong { display: block; text-transform: uppercase; }
+.site-footer__credit img,
+.page-footer img { width: clamp(76px, 8vw, 112px); height: auto; filter: brightness(0) invert(1); }
+.site-footer__credit:focus-visible,
+.page-footer a:focus-visible { outline: 3px solid #ffcc35; outline-offset: 6px; }
+@media (max-width: 767px) {
+  .site-footer,
+  .page-footer { align-items: flex-start; flex-direction: column; padding: 30px 20px 34px; }
+  .site-footer__credit,
+  .page-footer a { width: 100%; justify-content: space-between; }
+}

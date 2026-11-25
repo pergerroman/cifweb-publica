@@ -1,0 +1,91 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Club CIF | Deporte y comunidad en Cipolletti</title>
+  <meta name="description" content="Deporte, aprendizaje y encuentro para todas las edades en Cipolletti. Conocé las propuestas del Club CIF, Vacaciones en el CIF y el FPG.">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="theme-color" content="#244d3e">
+  <link rel="canonical" href="https://clubcif.com/">
+  <link rel="icon" href="assets/logo-cif.png" type="image/png">
+  <meta property="og:locale" content="es_AR">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Club CIF">
+  <meta property="og:title" content="Club CIF | Deporte y comunidad en Cipolletti">
+  <meta property="og:description" content="Deporte, aprendizaje y encuentro para todas las edades. Conocé las propuestas del Club CIF.">
+  <meta property="og:url" content="https://clubcif.com/">
+  <meta property="og:image" content="https://clubcif.com/assets/inicio-desktop.webp">
+  <meta property="og:image:width" content="1600">
+  <meta property="og:image:height" content="1067">
+  <meta property="og:image:alt" content="Chico del Club CIF jugando al fútbol">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Club CIF | Deporte y comunidad en Cipolletti">
+  <meta name="twitter:description" content="Deporte, aprendizaje y encuentro para todas las edades. Conocé las propuestas del Club CIF.">
+  <meta name="twitter:image" content="https://clubcif.com/assets/inicio-desktop.webp">
+  <link rel="preload" href="assets/fonts/Anton-Regular.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="assets/fonts/Montserrat-Variable.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#inicio">Ir al contenido</a>
+  <header class="header">
+    <a class="logo" href="./" aria-label="Club CIF, inicio"><img class="logo-mark" src="assets/logo-cif.png" alt="" width="48" height="49"><span>CLUB CIF</span></a>
+    <a class="button" href="https://app.clubcif.com/login">Ingresar a mi perfil <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 18 18 6M6 6h12v12"/></svg></a>
+  </header>
+  <main id="inicio">
+    <section class="hero" aria-label="Inicio del Club CIF" aria-roledescription="carrusel">
+      <div class="slides" tabindex="0" aria-label="Imágenes del club. Usá las flechas del teclado para navegar.">
+        <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="1 de 3" data-active="true">
+          <picture><source media="(max-width: 600px)" srcset="assets/inicio-mobile.webp"><img src="assets/inicio-desktop.webp" alt="Chico del CIF jugando al fútbol con la pelota a sus pies" fetchpriority="high" width="1600" height="1067"></picture>
+          <div class="hero-content">
+            <h1 class="hero-title">15 años creciendo en  movimiento.</h1>
+            <p class="hero-subtitle">Deporte, aprendizaje y encuentro para todas las edades. Vení a entrenar al CIF.</p>
+            <div class="hero-actions"><a class="button button-light" data-destination="whatsapp" role="link" aria-disabled="true" tabindex="0">Consultanos por WhatsApp <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+          </div>
+        </div>
+        <div class="slide" role="group" aria-roledescription="diapositiva" aria-label="2 de 3" inert>
+          <picture><source media="(max-width: 600px)" srcset="assets/verano-mobile.webp"><img src="assets/verano-desktop.webp" alt="Chicos jugando con una pelota en la pileta del CIF" width="1080" height="750"></picture>
+          <div class="hero-content">
+            <h2 class="hero-title">Verano en el CIF</h2>
+            <p class="hero-subtitle">Elegí la opción que más te guste para esta temporada 26-27 en el CIF.</p>
+            <div class="hero-actions">
+              <a class="button button-light" data-destination="vacaciones" href="./vacaciones/">Vacaciones en el CIF <img class="button-icon button-icon-sun" src="assets/icono-sol.png" alt="" width="26" height="26"></a>
+              <button class="button button-outline button-disabled" type="button" disabled>Campus deportivo <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+            </div>
+          </div>
+        </div>
+        <div class="slide slide--fpg" role="group" aria-roledescription="diapositiva" aria-label="3 de 3" inert>
+          <picture><source media="(max-width: 600px)" srcset="assets/fpg-mobile.webp"><img src="assets/fpg-desktop.webp" alt="Gimnastas con sus medallas celebrando sobre el podio del FPG" width="1600" height="902"></picture>
+          <div class="hero-content">
+            <h2 class="hero-title">Reviví el FPG 2026</h2>
+            <p class="hero-subtitle">Mirá todo sobre nuestro festival patagónico de gimnasia.</p>
+            <div class="hero-actions"><a class="button button-light" data-destination="fpg" href="./festival-patagonico-de-gimnasia/">Reviví el FPG <svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-bottom">
+        <div class="controls" aria-label="Controles del carrusel">
+          <button class="arrow" id="prev" aria-label="Imagen anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6"/></svg></button>
+          <div class="dots" aria-label="Elegir imagen">
+            <button class="dot" aria-label="Ver imagen 1" aria-current="true" data-slide="0"></button>
+            <button class="dot" aria-label="Ver imagen 2" data-slide="1"></button>
+            <button class="dot" aria-label="Ver imagen 3" data-slide="2"></button>
+          </div>
+          <button class="arrow" id="next" aria-label="Imagen siguiente"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6"/></svg></button>
+        </div>
+      </div>
+      <p class="sr-only" id="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <footer class="footer">
+    <a class="footer-logo" href="./" aria-label="Club CIF, inicio"><img src="assets/logo-cif.png" alt="Club CIF" width="192" height="192"></a>
+    <address class="footer-contact">
+      <div class="footer-item"><span class="footer-label">Ubicación</span><a href="https://www.google.com/maps/search/?api=1&amp;query=Maestro+Don+Juan+Espinosa+3493+Cipolletti+R%C3%ADo+Negro" target="_blank" rel="noopener noreferrer">Maestro Don Juan Espinosa 3493,<br>Cipolletti, Río Negro <span aria-hidden="true">↗</span></a></div>
+      <div class="footer-item"><span class="footer-label">WhatsApp</span><a href="https://wa.me/5492996292249" target="_blank" rel="noopener noreferrer">299 629 2249 <span aria-hidden="true">↗</span></a></div>
+      <div class="footer-item"><span class="footer-label">Instagram</span><a href="https://www.instagram.com/cifweb/" target="_blank" rel="noopener noreferrer">@cifweb <span aria-hidden="true">↗</span></a></div>
+    </address>
+  </footer>
+</body>
+</html>

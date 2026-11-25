@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.clubcif.com"
+        }
+      ],
+      "destination": "https://clubcif.com/:path*",
+      "permanent": true
+    }
+  ],
+  "trailingSlash": true
+}
