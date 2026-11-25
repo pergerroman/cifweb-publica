@@ -132,7 +132,7 @@ La visualización usa `@google/model-viewer` desde un CDN. Si el dominio remoto,
 
 - El carrusel principal rota cada 6 segundos y enlaza a Vacaciones y al FPG.
 - La opción `campus` permanece sin destino en `main.js` hasta contar con una URL confirmada.
-- La galería de Vacaciones avanza automáticamente hacia la izquierda a 12 px/s.
+- La galería de Vacaciones avanza automáticamente hacia la izquierda a 24 px/s.
 - La galería permite desplazamiento manual, pausa 5 segundos después de la interacción y luego reanuda su recorrido.
 - Las animaciones automáticas respetan `prefers-reduced-motion`.
 - La página `404.html` ofrece accesos directos al inicio, Vacaciones y FPG.

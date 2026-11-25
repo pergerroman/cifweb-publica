@@ -17,7 +17,9 @@ Este archivo registra cambios funcionales, de estructura, publicación y manteni
 
 - Se conectaron las opciones Vacaciones y FPG del carrusel principal con sus respectivas secciones.
 - Se creó una página `404.html` personalizada con accesos a las secciones principales.
-- Se agregó desplazamiento automático continuo a la galería de Vacaciones: movimiento visual hacia la izquierda a 12 px/s, pausa temporal tras interacción manual y respeto por movimiento reducido.
+- Se agregó desplazamiento automático continuo a la galería de Vacaciones: movimiento visual hacia la izquierda, pausa temporal tras interacción manual y respeto por movimiento reducido.
+- Se ajustó la galería a 24 px/s y se eliminó el recálculo de geometría en cada fotograma para obtener un movimiento más fluido.
+- Se redujo moderadamente el logo del cierre de Vacaciones para equilibrar su presencia en escritorio y móvil.
 
 ### SEO y redes sociales
 

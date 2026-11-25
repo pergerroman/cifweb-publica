@@ -10,17 +10,15 @@
     gallery.append(copy);
   });
 
-  const speed = 12; // Píxeles por segundo, hacia la izquierda visualmente.
+  const speed = 24; // Píxeles por segundo, hacia la izquierda visualmente.
   let previous = 0;
   let position = 0;
   let resumeAt = 0;
   let visible = true;
+  let cycle = 0;
 
-  const cycleWidth = () =>
-    gallery.children[originals.length].offsetLeft - originals[0].offsetLeft;
-
-  const reset = () => {
-    const cycle = cycleWidth();
+  const measure = () => {
+    cycle = gallery.children[originals.length].offsetLeft - originals[0].offsetLeft;
     position = cycle ? position % cycle : 0;
     gallery.scrollLeft = position;
   };
@@ -30,8 +28,8 @@
     resumeAt = performance.now() + 5000;
   };
 
-  reset();
-  addEventListener('resize', reset);
+  measure();
+  addEventListener('resize', measure);
   ['pointerdown', 'wheel', 'keydown'].forEach(event =>
     gallery.addEventListener(event, pauseAfterInteraction, { passive: true })
   );
@@ -47,8 +45,7 @@
     const delta = previous ? Math.min(now - previous, 50) : 0;
     previous = now;
 
-    if (visible && now > resumeAt && !document.hidden) {
-      const cycle = cycleWidth();
+    if (visible && cycle > 0 && now > resumeAt && !document.hidden) {
       position += delta * speed / 1000;
       if (position >= cycle) position -= cycle;
       gallery.scrollLeft = position;

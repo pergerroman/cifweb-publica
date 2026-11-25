@@ -80,7 +80,7 @@ body { padding-top:var(--header-height); }
  .header .button { flex-basis:auto; }
 }
 /* Movimiento continuo sin barra visible; el gesto manual sigue disponible. */
-.vac-gallery { scrollbar-width:none; scroll-snap-type:none; }
+.vac-gallery { scrollbar-width:none; scroll-snap-type:none; will-change:scroll-position; }
 .vac-gallery::-webkit-scrollbar { display:none; }
 @media(prefers-reduced-motion:reduce) { .vac-gallery { scroll-snap-type:x mandatory; } }
 /* El paisaje empieza detrás de las tarifas y continúa en turquesa al final. */
@@ -154,13 +154,13 @@ body { padding-top:var(--header-height); }
 /* Cierre de campaña entre la ubicación y el pie del club. */
 .vac-closing { position:relative; isolation:isolate; background:var(--vac-teal) url("assets/paisaje-cierre.webp") center center / 100% 100% no-repeat; }
 .vac-closing-content { position:relative; z-index:2; max-width:1600px; margin:auto; padding:clamp(90px,12vw,190px) 6% clamp(70px,9vw,145px); }
-.vac-closing-brand { display:block; width:76%; max-width:1100px; height:auto; margin:0 auto; filter:drop-shadow(6px 10px 8px #14261930); }
+.vac-closing-brand { display:block; width:68%; max-width:1000px; height:auto; margin:0 auto; filter:drop-shadow(6px 10px 8px #14261930); }
 .vac-closing-actions { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:clamp(45px,6vw,95px); }
 .vac-closing-actions .vac-cta { width:100%; min-width:0; margin:0; padding:22px 20px; font-size:clamp(25px,3.5vw,54px); text-align:center; text-transform:uppercase; text-decoration:none; }
 @media(max-width:700px) {
  .vac-closing { background-size:auto 100%; background-position:60% center; }
  .vac-closing-content { padding:70px 24px 65px; }
- .vac-closing-brand { width:100%; }
+ .vac-closing-brand { width:88%; }
  .vac-closing-actions { grid-template-columns:1fr; gap:16px; margin-top:38px; }
  .vac-closing-actions .vac-cta { min-height:64px; padding:17px 16px; font-size:28px; }
 }
