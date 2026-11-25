@@ -1,3 +1,11 @@
+@font-face {
+  font-family: "CIF Anton";
+  src: url("../assets/fonts/Anton-Regular.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+}
+
 @layer reset, base, scene, stats, chapters, loader, motion;
 
 @layer reset {
@@ -53,36 +61,65 @@
 
   .back-to-top {
     position: fixed;
-    z-index: 20;
+    z-index: 100;
+    right: 22px;
+    bottom: 22px;
     right: max(22px, env(safe-area-inset-right));
     bottom: max(22px, env(safe-area-inset-bottom));
     display: flex;
     align-items: center;
     gap: 0.55rem;
+    isolation: isolate;
     border: 0;
-    padding: 12px 16px 11px;
+    border-radius: 3px 8px 4px 7px / 6px 3px 8px 4px;
+    padding: 13px 18px 12px;
     background: var(--yellow);
     color: var(--pink);
-    clip-path: polygon(3% 7%, 97% 0, 100% 88%, 91% 100%, 0 94%);
     box-shadow: 7px 8px 0 rgb(6 25 36 / 24%);
     cursor: pointer;
     font-size: 0.7rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     line-height: 1;
+    max-width: calc(100vw - 28px);
+    text-decoration: none;
     text-transform: uppercase;
+    -webkit-appearance: none;
+    appearance: none;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(18px) rotate(1deg);
+    transform: translateY(14px) rotate(-1deg);
     visibility: hidden;
-    transition: opacity 180ms ease, transform 240ms cubic-bezier(0.2, 0.75, 0.2, 1), visibility 0s linear 240ms;
+    transition: opacity 180ms ease, transform 180ms ease, box-shadow 180ms ease;
   }
+  .back-to-top::before,
+  .back-to-top::after {
+    position: absolute;
+    z-index: -1;
+    background: var(--yellow);
+    content: "";
+    pointer-events: none;
+  }
+  .back-to-top::before {
+    inset: -2px 3px -2px -3px;
+    border-radius: 7px 2px 6px 3px / 3px 7px 2px 8px;
+    transform: rotate(1.7deg);
+  }
+  .back-to-top::after {
+    top: 7px;
+    right: -4px;
+    width: 9px;
+    height: 18px;
+    border-radius: 1px 5px 2px 1px;
+    transform: rotate(7deg);
+  }
+  .back-to-top:hover { transform: translateY(-2px) rotate(-1deg); box-shadow: 8px 10px 0 rgb(6 25 36 / 28%); }
+  .back-to-top:focus-visible { outline: 3px solid white; outline-offset: 5px; }
   .back-to-top.is-visible {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0) rotate(1deg);
+    transform: translateY(0) rotate(-1deg);
     visibility: visible;
-    transition-delay: 0s;
   }
   body.loader-active .back-to-top { opacity: 0; pointer-events: none; visibility: hidden; }
   .back-to-top__arrow { font-size: 1.15rem; line-height: 0.7; }
@@ -131,6 +168,11 @@
     align-items: flex-start;
     justify-content: space-between;
   }
+  .demo-hero__brands {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
   .demo-hero__nav-logo {
     display: block;
     width: 112px;
@@ -139,6 +181,24 @@
     transition: opacity 120ms linear;
   }
   .demo-hero__nav-logo img { width: 100%; height: auto; }
+  .demo-hero__club-link {
+    display: flex;
+    width: 150px;
+    height: 54px;
+    padding: 4px 12px 4px 5px;
+    align-items: center;
+    gap: 9px;
+    border-radius: 999px;
+    background: var(--paper);
+    color: #12493b;
+    box-shadow: 5px 6px 0 rgb(4 17 27 / 22%);
+    text-decoration: none;
+    transition: transform 180ms ease, box-shadow 180ms ease;
+  }
+  .demo-hero__club-link:hover { transform: translateY(-2px); box-shadow: 6px 8px 0 rgb(4 17 27 / 26%); }
+  .demo-hero__club-link:focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
+  .demo-hero__club-link img { width: 46px; height: 46px; flex: 0 0 auto; object-fit: contain; }
+  .demo-hero__club-link span { font: 400 1.35rem/1 "CIF Anton", Impact, sans-serif; white-space: nowrap; text-transform: uppercase; }
   body.logo-transition-ready .demo-hero__logo,
   body.logo-transition-ready .demo-hero__nav-logo { opacity: 0; }
   body.logo-transition-ready.hero-nav-ready .demo-hero__nav-logo { opacity: 1; }
@@ -1447,7 +1507,7 @@
     --hero-logo-width: min(58vw, 620px);
     --nav-logo-width: 112px;
     --nav-logo-top: 24px;
-    --nav-logo-left: 32px;
+    --nav-logo-left: 196px;
     position: fixed;
     z-index: 20;
     inset: 0;
@@ -1704,6 +1764,8 @@
 
 @media (max-width: 767px) {
   .back-to-top {
+    right: 14px;
+    bottom: 14px;
     right: max(14px, env(safe-area-inset-right));
     bottom: max(14px, env(safe-area-inset-bottom));
     padding: 11px 13px 10px;
@@ -1711,7 +1773,13 @@
     font-size: 0.64rem;
   }
   .demo-hero__nav { top: 18px; right: 20px; left: 20px; }
-  .demo-hero__nav-logo { width: 82px; }
+  .demo-hero__brands { gap: 9px; }
+  .demo-hero__nav { flex-wrap: wrap; row-gap: 8px; }
+  .demo-hero__nav-logo { width: 72px; }
+  .demo-hero__club-link { width: 112px; height: 42px; padding: 4px 7px 4px 4px; gap: 7px; box-shadow: 4px 5px 0 rgb(4 17 27 / 22%); }
+  .demo-hero__club-link img { width: 34px; height: 34px; }
+  .demo-hero__club-link span { font-size: 1.08rem; }
+  .demo-hero__meta { width: 100%; justify-content: flex-end; }
   .demo-hero__meta { gap: 0.3rem; }
   .demo-hero__edition { padding: 7px 8px 6px; font-size: 0.52rem; white-space: nowrap; }
   .demo-hero__archive-link { max-width: 82px; padding: 5px 1px 4px; font-size: 0.51rem; line-height: 1.1; text-align: center; }
@@ -1725,9 +1793,9 @@
   .loader__final-logo { top: 47%; width: clamp(175px, 58vw, 250px); }
   .loader {
     --hero-logo-width: min(84vw, 470px);
-    --nav-logo-width: 82px;
+    --nav-logo-width: 72px;
     --nav-logo-top: 18px;
-    --nav-logo-left: 20px;
+    --nav-logo-left: 141px;
   }
   .loader.is-revealing .loader__final-logo { top: 50%; left: 50%; width: var(--hero-logo-width); }
   .loader.is-docking .loader__final-logo {

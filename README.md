@@ -2,6 +2,8 @@
 
 Sitio institucional estático de Club CIF. Este repositorio reúne la portada principal, la propuesta Vacaciones en el CIF y el Festival Patagónico de Gimnasia (FPG) en una única publicación.
 
+Repositorio oficial: <https://github.com/pergerroman/cifweb-publica>
+
 No requiere compilación, gestor de paquetes ni base de datos: el contenido de esta carpeta es directamente publicable.
 
 ## URLs públicas
@@ -45,6 +47,19 @@ python3 -m http.server 8000
 ```
 
 Luego abrir `http://localhost:8000/`. Es preferible usar un servidor local en lugar de abrir los HTML con `file://`, porque algunas rutas, fuentes y recursos externos necesitan un origen HTTP.
+
+### Subir cambios al repositorio
+
+El remoto `origin` debe apuntar al repositorio oficial:
+
+```bash
+git remote set-url origin https://github.com/pergerroman/cifweb-publica.git
+git add .
+git commit -m "Actualizar sitio Club CIF"
+git push origin main
+```
+
+Antes de subir, revisar `git status` y no incluir archivos del sistema como `.DS_Store`.
 
 ## Publicación en `public_html`
 
@@ -135,7 +150,10 @@ La visualización usa `@google/model-viewer` desde un CDN. Si el dominio remoto,
 - La galería de Vacaciones avanza automáticamente hacia la izquierda a 24 px/s.
 - La galería permite desplazamiento manual, pausa 5 segundos después de la interacción y luego reanuda su recorrido.
 - Las animaciones automáticas respetan `prefers-reduced-motion`.
+- El Festival incluye un acceso a Club CIF en el header y un botón fijo para volver al inicio de la página.
 - La página `404.html` ofrece accesos directos al inicio, Vacaciones y FPG.
+
+La compatibilidad específica del botón fijo con Safari quedó pendiente de una validación dedicada. La versión actual conserva el comportamiento estable probado en navegadores principales, pero no debe considerarse una certificación final para Safari.
 
 ## Servicios externos
 
@@ -162,6 +180,8 @@ Los pendientes de Vacaciones también están señalados con comentarios dentro d
 
 - Revisar textos, fechas, precios, teléfonos y enlaces externos.
 - Probar portada, Vacaciones, FPG, páginas internas y `404.html` en móvil y escritorio.
+- Comprobar desde 320 px de ancho que headers, CTAs y controles fijos permanezcan dentro del viewport y no se superpongan.
+- La prueba específica en Safari queda pendiente y no debe marcarse como validada hasta retomarla.
 - Confirmar las redirecciones HTTP, `www`, `/fpg/` y la ruta antigua de Vacaciones.
 - Verificar canonical, títulos, descripciones e imágenes sociales.
 - Abrir directamente el modelo 3D y comprobar CORS desde `clubcif.com`.

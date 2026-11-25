@@ -28,10 +28,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="stylesheet" href="https://use.typekit.net/wkj3bjt.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;600;700&display=swap" />
-    <link rel="stylesheet" href="./styles.css?v=20261118-02" />
+    <link rel="stylesheet" href="./styles.css?v=20261125-07" />
     <link rel="stylesheet" href="./assets/footer.css?v=20261103-1115" />
     <script type="module" src="https://unpkg.com/@google/model-viewer@4.1.0/dist/model-viewer.min.js"></script>
-    <script src="./loader.js?v=20261118-01" defer></script>
+    <script src="./loader.js?v=20261125-04" defer></script>
   </head>
   <body class="loader-active">
     <main class="site-preview">
@@ -45,9 +45,15 @@
         </div>
         <div class="demo-hero__shade" aria-hidden="true"></div>
         <header class="demo-hero__nav">
-          <a class="demo-hero__nav-logo" href="#" aria-label="Festival Patagónico de Gimnasia, inicio">
-            <img src="./assets/elementos/logo-fpg-2026.svg" alt="" />
-          </a>
+          <div class="demo-hero__brands">
+            <a class="demo-hero__club-link" href="../" aria-label="Volver al inicio de Club CIF" title="Club CIF">
+              <img src="../assets/logo-cif.png" alt="" />
+              <span>Club CIF</span>
+            </a>
+            <a class="demo-hero__nav-logo" href="#inicio" aria-label="Festival Patagónico de Gimnasia, inicio">
+              <img src="./assets/elementos/logo-fpg-2026.svg" alt="" />
+            </a>
+          </div>
           <div class="demo-hero__meta">
             <span class="demo-hero__edition" aria-current="page">Edición 2026</span>
             <a class="demo-hero__archive-link" href="./que-es/">Qué es?</a>
@@ -428,10 +434,10 @@
       </footer>
     </main>
 
-    <button class="back-to-top" id="back-to-top" type="button" aria-label="Volver al inicio">
+    <a class="back-to-top" id="back-to-top" href="#inicio" aria-label="Volver al inicio de la página">
       <span class="back-to-top__arrow" aria-hidden="true">↑</span>
       <span>Inicio</span>
-    </button>
+    </a>
 
     <section class="loader" id="fpg-loader" role="status" aria-live="polite" aria-label="Cargando el Festival Patagónico de Gimnasia">
       <div class="loader__surface">

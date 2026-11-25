@@ -4,6 +4,11 @@ Este archivo registra cambios funcionales, de estructura, publicación y manteni
 
 ## 2026-11-25
 
+### Repositorio
+
+- Se actualizó la referencia documental al repositorio oficial `pergerroman/cifweb-publica`.
+- Se documentaron los comandos para verificar el remoto y subir cambios a `main`.
+
 ### Estructura y publicación
 
 - Se unificaron la portada, Vacaciones en el CIF y el Festival Patagónico de Gimnasia bajo una única raíz publicable.
@@ -16,6 +21,11 @@ Este archivo registra cambios funcionales, de estructura, publicación y manteni
 ### Navegación y experiencia
 
 - Se conectaron las opciones Vacaciones y FPG del carrusel principal con sus respectivas secciones.
+- Se agregó la identidad completa de Club CIF al header del Festival, seguida por el logo del FPG, con enlace al home; también se reforzó el botón fijo para volver al inicio de la página.
+- Se reforzó el botón fijo de inicio del Festival como enlace HTML con fallback nativo, posición segura y estética de papel cortado.
+- Se aplicó al botón fijo de inicio la estética de papel cortado del Festival sin depender de `clip-path`.
+- Se revisaron los controles principales desde 320 px de ancho y se evitó que el botón fijo del Festival se superponga con los controles del hero.
+- La integración específica para mostrar el botón en Safari quedó pausada; no se considera una compatibilidad cerrada ni validada para publicación.
 - Se creó una página `404.html` personalizada con accesos a las secciones principales.
 - Se agregó desplazamiento automático continuo a la galería de Vacaciones: movimiento visual hacia la izquierda, pausa temporal tras interacción manual y respeto por movimiento reducido.
 - Se ajustó la galería a 24 px/s y se eliminó el recálculo de geometría en cada fotograma para obtener un movimiento más fluido.
@@ -44,3 +54,4 @@ Este archivo registra cambios funcionales, de estructura, publicación y manteni
 - Confirmar el destino de Campus en el carrusel principal.
 - Completar aclaraciones de pases, recorrido de transporte, dirección y horarios del predio en Vacaciones.
 - Revisar información temporal de la temporada 2026/27 antes de futuras publicaciones.
+- Retomar la validación específica del botón fijo en Safari cuando se vuelva a priorizar esa compatibilidad.

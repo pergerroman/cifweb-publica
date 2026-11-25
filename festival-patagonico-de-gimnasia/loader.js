@@ -9,6 +9,7 @@ const heroSlides = [...document.querySelectorAll(".demo-hero__photo")];
 const heroSlideshowToggle = document.querySelector("#hero-slideshow-toggle");
 const heroNavLogo = document.querySelector(".demo-hero__nav-logo");
 const backToTopButton = document.querySelector("#back-to-top");
+const heroSection = document.querySelector("#inicio");
 const venueChapter = document.querySelector("#el-espacio");
 const clubsChapter = document.querySelector("#clubes");
 const clubsStage = clubsChapter?.querySelector(".clubs-chapter__stage");
@@ -50,12 +51,19 @@ function clamp(value, minimum = 0, maximum = 1) {
 }
 
 function renderBackToTop() {
-  backToTopButton?.classList.toggle("is-visible", window.scrollY > 24);
+  const scrollTop = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+  backToTopButton?.classList.toggle("is-visible", scrollTop > 120);
 }
 
 function scheduleBackToTop() {
   window.cancelAnimationFrame(backToTopAnimationFrame);
   backToTopAnimationFrame = window.requestAnimationFrame(renderBackToTop);
+}
+
+if ("IntersectionObserver" in window && heroSection && backToTopButton) {
+  new IntersectionObserver(([entry]) => {
+    backToTopButton.classList.toggle("is-visible", !entry.isIntersecting);
+  }, { threshold: 0.05 }).observe(heroSection);
 }
 
 function prepareSponsorRibbons() {
@@ -386,7 +394,8 @@ function startLoader() {
 skipButton.addEventListener("click", () => finish(runId));
 replayButton.addEventListener("click", startLoader);
 heroSlideshowToggle.addEventListener("click", () => setHeroSlideshowPaused(!heroSlidesPaused));
-backToTopButton?.addEventListener("click", () => {
+backToTopButton?.addEventListener("click", (event) => {
+  event.preventDefault();
   heroNavLogo?.focus({ preventScroll: true });
   window.scrollTo({ top: 0, behavior: reduceMotion.matches ? "auto" : "smooth" });
 });
@@ -400,6 +409,7 @@ window.addEventListener("scroll", scheduleVenueTransition, { passive: true });
 window.addEventListener("scroll", scheduleClubsJourney, { passive: true });
 window.addEventListener("scroll", scheduleMemoryTransition, { passive: true });
 window.addEventListener("scroll", scheduleBackToTop, { passive: true });
+document.addEventListener("scroll", scheduleBackToTop, { capture: true, passive: true });
 window.addEventListener("resize", () => {
   scheduleVenueTransition();
   measureClubsJourney();

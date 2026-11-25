@@ -1,0 +1,5 @@
+# Archivos generados por macOS
+.DS_Store
+
+# Archivos temporales de editores y herramientas locales
+.playwright-cli/
