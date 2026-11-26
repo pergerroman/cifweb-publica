@@ -213,6 +213,16 @@ a:focus-visible, button:focus-visible, .slides:focus-visible {
   padding: 18px 25px;
   min-height: 62px;
 }
+.hero-actions .button[data-destination=vacaciones] {
+  background: #329e96;
+  color: white;
+}
+.hero-actions .button[data-destination=vacaciones]:hover { background: #277f79; }
+.hero-actions .button[data-destination=fpg] {
+  background: #c92d89;
+  color: white;
+}
+.hero-actions .button[data-destination=fpg]:hover { background: #a92372; }
 
 /* Controles del carrusel */
 .hero-bottom {

@@ -10,7 +10,7 @@
     gallery.append(copy);
   });
 
-  const speed = 24; // Píxeles por segundo, hacia la izquierda visualmente.
+  const speed = 48; // Píxeles por segundo, hacia la izquierda visualmente.
   let previous = 0;
   let position = 0;
   let resumeAt = 0;
